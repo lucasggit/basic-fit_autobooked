@@ -1,0 +1,26 @@
+1. VOTRE MAIL
+2. VOTRE MOTE DE PASSE
+3. ID horaire (	18:00 = 31,
+		18:15 = 32,
+		18:30 = 33,
+		18:45 = 34,
+		19:00 = 35,
+		19:15 = 36,
+		19:30 = 37,
+		19:45 = 38,
+		20:00 = 39,
+		20:15 = 40,
+		20:30 = 41,
+		20:45 = 42,
+		21:00 = 43,
+		 etc...)
+4. ID duration ( 30 minutes = 11,
+		 60 minutes = 12,
+		 90 minutes = 13)
+-------------------
+exemple type:
+-------------------
+saluttoi@gmail.com
+monmdp
+42
+13

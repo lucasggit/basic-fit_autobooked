@@ -1,10 +1,14 @@
 from selenium.webdriver import Firefox
+from datetime import date, timedelta
 import time 
 
 driver = Firefox()
 driver.get("https://my.basic-fit.com/login")
 time.sleep(3) 
-datas = ['VOTREMAIL', 'VOTERMDP']
+datas = []
+f = open('variables.txt', "r")
+for i, line in enumerate(f):
+	datas.append(line)
 
 count = 0    
 email = driver.find_elements_by_name("email") 
@@ -15,26 +19,31 @@ for value in password:
 	value.send_keys(datas[1])    
 submit = driver.find_element_by_id("loginBtn") 
 submit.click() 
-time.sleep(2)
+time.sleep(3)
 gymbooking = driver.find_element_by_id("gymTimeBookingMenuId") 
 gymbooking.click()
 time.sleep(1)
 idreserveBookingId = driver.find_element_by_id("reserveBookingId")
 idreserveBookingId.click()
 time.sleep(1)
-day = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div[13]")
+today = date.today()
+tommorow = today + timedelta(days=1)
+d1 = tommorow.strftime("%d")
+print("Tommorow date: ", d1)
+
+day = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div["+d1+"]/p")
 day.click()
 time.sleep(1)
 ideveningSlotsId = driver.find_element_by_id("eveningSlotsId")
 ideveningSlotsId.click()
 time.sleep(1)
-heure = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div[43]/div[1]/p")
+heure = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div["+datas[2]+"]/div[1]/p")
 heure.click()
 time.sleep(1)
 nextBtnId = driver.find_element_by_id("nextBtnId")
 nextBtnId.click()
 time.sleep(1)
-duration = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div[13]/p")
+duration = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div["+datas[3]+"]/p")
 duration.click()
 time.sleep(1)
 checkbox = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div[22]/div[1]")
