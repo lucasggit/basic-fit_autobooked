@@ -5,7 +5,7 @@ Powered by Selenium (python3)
 Using Firefox, and customize for my personal gym club
 
 ## Prerequisites
-### INSTALLATION PYTHON3 ET PIP
+### Installation python3 and pip
 ```
 sudo apt update
 sudo apt install python3
@@ -14,12 +14,12 @@ pip3 --version
 ```
 
 
-### INSTALLATION SELENIUM
+### installation selenium
 ```
 python3 -m pip install selenium
 ```
 
-### INSTALLATION DRIVER FIREFOX
+### Installation Firefox driver
 ```
 wget https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz
 tar -xf geckodriver-v0.30.0-linux64.tar.gz
