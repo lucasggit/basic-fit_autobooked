@@ -29,11 +29,7 @@ def job():
 	idreserveBookingId = driver.find_element_by_id("reserveBookingId")
 	idreserveBookingId.click()
 	time.sleep(1)
-	today = date.today()
-	tommorow = today + timedelta(days=1)
-	d1 = tommorow.strftime("%d")
-	print("Tommorow date: ", d1)
-	day = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div["+d1+"]/p")
+	day = driver.find_element_by_xpath("/html/body/div[2]/div/div[3]/div[1]/div/div[13]/p")
 	day.click()
 	time.sleep(1)
 	ideveningSlotsId = driver.find_element_by_id("eveningSlotsId")
@@ -56,7 +52,7 @@ def job():
 	time.sleep(3)
 	driver.close()
 
-schedule.every().day.at("04:00").do(job)
+schedule.every(24).hours.do(job)
 
 while True:
     schedule.run_pending()
